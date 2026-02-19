@@ -1,0 +1,39 @@
+@model Quiz_6XXXXXX_Student.Models.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_blankLayout.cshtml";
+}
+
+<div class="min-vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow-lg" style="width: 400px; border-radius: 16px; overflow: hidden;">
+        <div class="card-header bg-primary text-white text-center py-4">
+            <i class="fas fa-graduation-cap fa-3x mb-2 d-block"></i>
+            <h4 class="mb-0 fw-bold">Student Portal</h4>
+            <small>ระบบจัดการนักศึกษา</small>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Login" asp-controller="Account" method="post">
+                <div class="mb-3">
+                    <label asp-for="UserId" class="form-label fw-semibold">
+                        <i class="fas fa-id-card me-1 text-primary"></i>User ID
+                    </label>
+                    <input asp-for="UserId" class="form-control form-control-lg" placeholder="กรอกรหัสนักศึกษา" required />
+                </div>
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label fw-semibold">
+                        <i class="fas fa-lock me-1 text-primary"></i>Password
+                    </label>
+                    <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="กรอกรหัสผ่าน" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100">
+                    <i class="fas fa-sign-in-alt me-2"></i>เข้าสู่ระบบ
+                </button>
+            </form>
+        </div>
+        <div class="card-footer text-center text-muted small py-3 bg-white">
+            &copy; @DateTime.Now.Year Student Management System
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
